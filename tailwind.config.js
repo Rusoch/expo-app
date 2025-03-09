@@ -1,10 +1,45 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./App.{js,ts,tsx}', './components/**/*.{js,ts,tsx}'],
-
+  content: [
+    './App.{js,ts,tsx}',
+    './src/components/**/*.{js,ts,tsx}',
+    './src/shared/**/*.{js,ts,tsx}', // If you have shared components or files
+    './src/utils/**/*.{js,ts,tsx}', // If you have utils with tailwind classes
+  ],
   presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: 'var(--color-primary-default)',
+          light: 'var(--color-primary-light)',
+        },
+        secondary: {
+          DEFAULT: 'var(--color-secondary-default)',
+          light: 'var(--color-secondary-light)',
+        },
+        tertiary: {
+          DEFAULT: 'var(--color-tertiary-default)',
+          light: 'var(--color-tertiary-light)',
+        },
+        accent: {
+          DEFAULT: 'var(--color-accent-default)',
+          light: 'var(--color-accent-light)',
+        },
+        grey: {
+          DEFAULT: 'var(--color-grey-default)',
+        },
+        slate: {
+          DEFAULT: 'var(--color-slate-default)',
+        },
+        dark: {
+          DEFAULT: 'var(--color-dark-default)',
+        },
+        light: {
+          DEFAULT: 'var(--color-light-default)',
+        },
+        overlay: 'var(--color-overlay)',
+      },
+    },
   },
   plugins: [],
 };
