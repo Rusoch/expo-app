@@ -1,16 +1,18 @@
 import { ScreenContent } from '~/utils/components/ScreenContent';
 import { StatusBar } from 'expo-status-bar';
-
 import './global.css';
-import { ThemeProvider } from '~/utils/components/shared-components/providers/ThemeProviders';
-import { ThemeComponent } from '~/utils/components/shared-components/ThemeComponent';
+import { ThemeProvider } from '~/utils/components/shared/providers/ThemeProviders';
+import { ThemeComponent } from '~/utils/components/shared/ThemeComponent';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
   return (
     <ThemeProvider>
       <ThemeComponent>
-      <ScreenContent title="Home" path="App.tsx" />
-      <StatusBar style="auto" />
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <ScreenContent title="Welcome" />
+        </GestureHandlerRootView>
+        <StatusBar style="auto" />
       </ThemeComponent>
     </ThemeProvider>
   );

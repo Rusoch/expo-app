@@ -2,8 +2,9 @@ module.exports = {
   content: [
     './App.{js,ts,tsx}',
     './src/components/**/*.{js,ts,tsx}',
-    './src/shared/**/*.{js,ts,tsx}', // If you have shared components or files
-    './src/utils/**/*.{js,ts,tsx}', // If you have utils with tailwind classes
+    './src/form/**/*.{js,ts,tsx}',
+    './src/shared/**/*.{js,ts,tsx}',
+    './src/utils/**/*.{js,ts,tsx}',
   ],
   presets: [require('nativewind/preset')],
   theme: {
