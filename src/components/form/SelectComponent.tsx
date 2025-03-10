@@ -33,8 +33,12 @@ export const SelectComponent = ({ data, placeholder }: SelectComponentProps) => 
   }, []);
 
   const onButtonLayout = (event: LayoutChangeEvent) => {
-    buttonRef.current?.measure((x, y, width, height, pageX, pageY) => {
-      setDropdownPosition({ top: pageY + height + 5, left: pageX, width });
+    buttonRef.current?.measureInWindow((x, y, width, height) => {
+      setDropdownPosition({
+        top: y + height + 5,  // Adjust dropdown position below the button
+        left: x,
+        width,
+      });
     });
   };
 
@@ -66,6 +70,7 @@ export const SelectComponent = ({ data, placeholder }: SelectComponentProps) => 
                 top: dropdownPosition.top,
                 left: dropdownPosition.left,
                 width: dropdownPosition.width,
+                zIndex: 999, // Ensure the dropdown appears above other elements
               }}
             >
               <FlatList
