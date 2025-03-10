@@ -8,17 +8,17 @@ export const ThemeComponent: React.FC<PropsWithChildren> = ({ children }) => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <View className={`flex-1 items-center justify-center ${isDarkMode ? 'bg-[#494F55]' : 'bg-[#F3F6FF]'}`}>
-      {/* Toggle Button */}
+    <View className={`flex-1 ${isDarkMode ? 'bg-[#494F55]' : 'bg-[#F3F6FF]'}`}>
+      {/* Absolute positioning for theme toggle */}
       <View className="absolute right-10 top-20 z-10">
         <TouchableOpacity onPress={toggleTheme} className="p-2">
           <Ionicons name={isDarkMode ? 'moon' : 'sunny'} size={30} color="#37000A" />
         </TouchableOpacity>
       </View>
 
-      {/* Content */}
-      <View>
-        <Text className={`${isDarkMode ? 'text-black' : 'text-green-600'}`}>{children}</Text>
+      {/* Main content container */}
+      <View className="flex-1">
+        {children}
       </View>
 
       <StatusBar style={isDarkMode ? 'light' : 'dark'} />
