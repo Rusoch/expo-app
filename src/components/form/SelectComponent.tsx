@@ -69,7 +69,7 @@ export const SelectComponent = ({ data, placeholder }: SelectComponentProps) => 
                 top: dropdownPosition.top,
                 left: dropdownPosition.left,
                 width: dropdownPosition.width,
-                zIndex: 999, 
+                zIndex: 999,
               }}
             >
               <FlatList

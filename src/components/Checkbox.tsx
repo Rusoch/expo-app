@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { View, Text, Pressable, Animated } from "react-native";
-import { useTheme } from "../components/shared/providers/ThemeProviders";
+import { useTheme } from "~/providers/ThemeProviders";
 
 export const CheckboxComponent = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -23,13 +23,15 @@ export const CheckboxComponent = () => {
     >
       <View className="border-2-gray align-center color-textColor mr-2 h-[24px] w-[24px] justify-center border ">
         {isChecked && (
-          <Text  className={`text-xl font-bold bg-bgSelectL ${isDarkMode ? "text-textColorD" : "text-textColorL"}`}>✔️</Text>
+          <Text
+            className={`bg-bgSelectL text-xl font-bold ${isDarkMode ? "text-textColorD" : "text-textColorL"}`}
+          >
+            ✔️
+          </Text>
         )}
       </View>
       <Animated.Text style={[{ transform: [{ translateX: shakeAnim }] }]}>
-        <Text
-          className={`text-xl font-bold ${isDarkMode ? "text-textColorD" : "text-textColorL"}`}
-        >
+        <Text className={`text-xl font-bold ${isDarkMode ? "text-textColorD" : "text-textColorL"}`}>
           Save this info
         </Text>
       </Animated.Text>

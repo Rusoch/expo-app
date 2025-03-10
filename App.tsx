@@ -1,8 +1,8 @@
 import { ScreenContent } from "~/components/ScreenContent";
 import { StatusBar } from "expo-status-bar";
 import "./global.css";
-import { ThemeProvider } from "~/components/shared/providers/ThemeProviders";
-import { ThemeComponent } from "~/components/shared/ThemeComponent";
+import { ThemeProvider } from "~/providers/ThemeProviders";
+import { ThemeComponent } from "~/components/ThemeComponent";
 
 export default function App() {
   return (

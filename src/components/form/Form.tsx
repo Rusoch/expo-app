@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import { SelectComponent } from "./SelectComponent";
 import { genderData, rolesData } from "~/utils/data";
 import { CheckboxComponent } from "../Checkbox";
-import { useTheme } from "../shared/providers/ThemeProviders";
+import { useTheme } from "~/providers/ThemeProviders";
 
 export const FormComponent = () => {
   const { isDarkMode } = useTheme();
