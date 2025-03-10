@@ -6,9 +6,10 @@ import { ThemeComponent } from "~/components/shared/ThemeComponent";
 
 export default function App() {
   return (
-    <ThemeProvider><ThemeComponent>
-      <ScreenContent title="Welcome" path="App.tsx" />
-      <StatusBar style="auto" />
+    <ThemeProvider>
+      <ThemeComponent>
+        <ScreenContent title="Welcome" path="App.tsx" />
+        <StatusBar style="auto" />
       </ThemeComponent>
     </ThemeProvider>
   );

@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import { View, Text, Pressable, Animated } from "react-native";
+import { useTheme } from "../components/shared/providers/ThemeProviders";
 
 export const CheckboxComponent = () => {
   const [isChecked, setIsChecked] = useState(false);
   const shakeAnim = useRef(new Animated.Value(0)).current;
+  const { isDarkMode } = useTheme();
 
   const handlePress = () => {
     setIsChecked(!isChecked);
@@ -15,12 +17,21 @@ export const CheckboxComponent = () => {
   };
 
   return (
-    <Pressable onPress={handlePress} className="align-center my-2 flex flex-row justify-center mt-10">
-      <View className="border-2-gray align-center mr-2 h-[24px] w-[24px] justify-center border ">
-        {isChecked && <Text>✔️</Text>}
+    <Pressable
+      onPress={handlePress}
+      className="align-center my-2 mt-10 flex flex-row justify-center"
+    >
+      <View className="border-2-gray align-center color-textColor mr-2 h-[24px] w-[24px] justify-center border ">
+        {isChecked && (
+          <Text  className={`text-xl font-bold bg-bgSelectL ${isDarkMode ? "text-textColorD" : "text-textColorL"}`}>✔️</Text>
+        )}
       </View>
       <Animated.Text style={[{ transform: [{ translateX: shakeAnim }] }]}>
-        Save this info
+        <Text
+          className={`text-xl font-bold ${isDarkMode ? "text-textColorD" : "text-textColorL"}`}
+        >
+          Save this info
+        </Text>
       </Animated.Text>
     </Pressable>
   );

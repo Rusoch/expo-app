@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, PropsWithChildren } from 'react';
+import React, { createContext, useContext, useState, PropsWithChildren } from "react";
 
 interface ThemeContextType {
   isDarkMode: boolean;
@@ -22,7 +22,7 @@ export const ThemeProvider: React.FC<PropsWithChildren<{}>> = ({ children }) => 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
 };

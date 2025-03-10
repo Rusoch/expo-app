@@ -35,7 +35,7 @@ export const SelectComponent = ({ data, placeholder }: SelectComponentProps) => 
   const onButtonLayout = (event: LayoutChangeEvent) => {
     buttonRef.current?.measureInWindow((x, y, width, height) => {
       setDropdownPosition({
-        top: y + height + 5,  // Adjust dropdown position below the button
+        top: y + height + 5,
         left: x,
         width,
       });
@@ -44,7 +44,6 @@ export const SelectComponent = ({ data, placeholder }: SelectComponentProps) => 
 
   return (
     <View className="w-full">
-      {/* Select Button */}
       <TouchableOpacity
         onPress={toggleExpanded}
         activeOpacity={0.8}
@@ -70,7 +69,7 @@ export const SelectComponent = ({ data, placeholder }: SelectComponentProps) => 
                 top: dropdownPosition.top,
                 left: dropdownPosition.left,
                 width: dropdownPosition.width,
-                zIndex: 999, // Ensure the dropdown appears above other elements
+                zIndex: 999, 
               }}
             >
               <FlatList
